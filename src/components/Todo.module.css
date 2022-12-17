@@ -1,37 +1,78 @@
 .todo {
-    @apply flex items-center py-2 px-3 my-4 text-2xl rounded-md bg-gray-50 text-gray-700 border-2 border-gray-900;
+    @apply flex items-center py-2 px-3 my-4 text-2xl
+    rounded-md bg-gray-50 text-gray-700;
 }
 
 .todoText {
-    @apply w-full text-left;
+    @apply w-full text-left
+    text-xl sm:text-2xl;
 }
 
 .todoIcon {
     @apply text-3xl mr-3 text-teal-700;
 }
 
+.todoIconEdit {
+    @apply text-orange-500;
+}
+
+.edit,
+.edit .inputEdit {
+    @apply bg-orange-100;
+}
+
+.edit {
+    @apply shadow-amber-100 shadow-md;
+}
+
 .completedTodo {
-    @apply border-gray-500;
+    @apply border-gray-300 line-through bg-gray-400;
 }
 
 .todo.completedTodo .todoIcon,
 .todo.completedTodo .checkIcon,
-.todo.completedTodo .deleteIcon {
-    @apply text-gray-500
+.todo.completedTodo .deleteIcon,
+.todo.completedTodo .editIcon,
+.todo.completedTodo .inputEdit {
+    @apply text-gray-500 bg-gray-400;
 }
 
 .checkIcon,
-.deleteIcon {
-    @apply w-12 h-8 cursor-pointer text-gray-300 px-2
+.deleteIcon,
+.editIcon,
+.saveIcon,
+.closeIcon {
+    @apply w-12 h-8 cursor-pointer text-gray-300 px-2 self-center
     hover:scale-125;
 
-    transition: transform ease-in-out 0.2s;
+    transition: transform ease-in-out 0.25s;
 }
 
 .checkIcon:hover {
-    @apply text-green-700
+    @apply text-green-700;
 }
 
 .deleteIcon:hover {
-   @apply text-red-700;
+    @apply text-red-700;
+}
+
+.editIcon:hover {
+    @apply text-yellow-400;
+}
+
+.saveIcon:hover {
+    @apply text-blue-400;
+}
+
+.closeIcon:hover {
+    @apply text-rose-400;
+}
+
+.inputEdit {
+    @apply w-full bg-gray-50 no-underline resize-y min-h-[2rem] h-8 max-h-[6rem] overflow-auto mr-2
+    text-xl sm:text-2xl;
+}
+
+.wrapper {
+    @apply flex justify-between w-full;
 }

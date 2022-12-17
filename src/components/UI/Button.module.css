@@ -1,8 +1,29 @@
 .btn {
     @apply inline-flex items-center justify-center
-    ml-5 h-12 cursor-pointer py-2 px-3 border-none rounded-md text-2xl bg-lime-300
-    hover:scale-105
-    hover:bg-blue-400;
-    transition: all ease-in-out 0.2s;
+    h-12 py-2 px-3 border-none rounded-md outline-none
+    text-xl sm:text-2xl;
+
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+    background: var(--batton-backround-color);
+    color: var(--batton-text);
+    transition: all 0.35s ease-in-out;
 }
 
+.btn:not([disabled]) {
+    @apply cursor-pointer;
+}
+
+.btn:not([disabled]):hover {
+    transform: scale(1.05);
+    background: var(--batton-backround-color-hover);
+    transition: all 0.25s ease-in-out;
+}
+
+.btn:not([disabled]):active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+
+.btn:disabled {
+    @apply text-gray-400;
+}

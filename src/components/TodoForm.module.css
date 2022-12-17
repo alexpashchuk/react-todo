@@ -3,9 +3,16 @@
 }
 
 .todoFormContainer form {
-    @apply flex items-center justify-center;
+    @apply grid grid-cols-2 items-center justify-center gap-4;
+    grid-template-columns: minmax(200px, 450px) minmax(80px, 100px);
 }
 
-.todoFormContainer input {
-    @apply w-full h-12  py-2 px-3 border-none rounded-md text-2xl;
+.input {
+    @apply w-full h-12 py-2 px-3 border-none rounded-md
+    text-xl sm:text-2xl;
+}
+
+.inputValid {
+    @apply text-xl
+    placeholder:text-red-600;
 }

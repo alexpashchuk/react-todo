@@ -2,13 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .App {
-    @apply text-center mx-auto max-w-lg mt-20;
+    @apply text-center mx-4 max-w-xl rounded-2xl my-20 p-4
+    border-solid border-2 border-blue-800 shadow-2xl;
+    border-color: var(--border-color-main);
+    box-shadow: var(--box-shadow-main);
+    background: var(--backround-color-main);
+    transition: all 0.5s linear;
 }
 
 #root {
-    @apply overflow-hidden;
+    @apply flex flex-col justify-center items-center overflow-hidden;
 }
 
 * {
@@ -21,9 +25,9 @@ body {
 }
 
 body {
-    @apply bg-purple-400;
+    background: var(--backround-color);
     font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+        sans-serif;
 }
 
 h1 {
@@ -50,5 +54,42 @@ button,
 input,
 select,
 textarea {
-    @apply text-black font-normal border;
+    @apply text-black font-normal border-none bg-none outline-none;
+}
+
+a:active,
+a:hover,
+a {
+    @apply no-underline;
+}
+
+html {
+    /*light theme gradient colors bg main*/
+    --color-light-bg-1: rgb(56, 189, 248);
+    --color-light-bg-2: rgb(49, 46, 129);
+    /*dark theme gradient colors bg main*/
+    --color-dark-bg-1: rgb(17, 24, 39);
+    --color-dark-bg-2: rgb(75, 85, 99);
+}
+
+/*light theme*/
+html[data-theme='light'] {
+    --backround-color: radial-gradient(at right center, var(--color-light-bg-1), var(--color-light-bg-2));
+    --backround-color-main: rgb(59 130 246);
+    --box-shadow-main: #34d399 0px 14px 28px, #34d399 0px 10px 10px;
+    --border-color-main: #065f46;
+    --batton-backround-color: rgb(239 68 68);
+    --batton-backround-color-hover: rgb(252 165 165);
+    --batton-text: black;
+}
+
+/*dark theme*/
+html[data-theme='dark'] {
+    --backround-color: radial-gradient(at right center, var(--color-dark-bg-1), var(--color-dark-bg-2));
+    --backround-color-main: rgb(38 38 38);
+    --box-shadow-main: #0369a1 0px 14px 28px, #0369a1 0px 10px 10px;
+    --border-color-main: #1d4ed8;
+    --batton-backround-color: rgb(153 27 27);
+    --batton-backround-color-hover: rgb(248 113 113);
+    --batton-text: white;
 }

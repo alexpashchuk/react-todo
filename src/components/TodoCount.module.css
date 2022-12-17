@@ -1,17 +1,21 @@
-.todoFormContainer {
-    @apply mb-7;
+.wrapper {
+    @apply flex items-center flex-wrap gap-2 w-full
+    justify-center sm:justify-between;
 }
 
-.todoFormContainer form {
-    @apply flex items-center justify-center gap-4;
+.total,
+.completed {
+    @apply w-44 rounded p-1 bg-[conic-gradient(at_left,_var(--tw-gradient-stops))] from-sky-400 to-blue-800;
+    color: var(--batton-text);
+    background: var(--backround-color);
 }
 
-.input {
-    @apply w-full h-12 py-2 px-3 border-none rounded-md
-    text-xl sm:text-2xl;
+.text {
+    @apply font-semibold;
+    color: var(--batton-text);
+    transition: color 0.5s linear;
 }
 
-.inputValid {
-    @apply text-xl
-    placeholder:text-red-600;
+.count {
+    @apply text-pink-600;
 }

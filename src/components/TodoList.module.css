@@ -1,3 +1,7 @@
 .todoListContainer {
     @apply py-2;
 }
+
+.todoListContainer h2 {
+    color: var(--batton-text);
+}

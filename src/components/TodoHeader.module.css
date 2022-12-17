@@ -1,17 +1,57 @@
-.todoFormContainer {
-    @apply mb-7;
+.wrapper {
+    @apply flex items-center justify-center;
+}
+.link {
+    @apply flex items-center justify-center bg-transparent text-3xl font-semibold text-black
+    mb-6 py-2 px-8 relative overflow-hidden uppercase border-none;
+    color: var(--batton-text);
 }
 
-.todoFormContainer form {
-    @apply flex items-center justify-center gap-4;
+.link:before {
+    @apply content-[''] absolute top-0 -left-full w-full h-0.5 bg-black;
+    background: var(--batton-text);
+    transition: all ease-in-out 1s;
 }
 
-.input {
-    @apply w-full h-12 py-2 px-3 border-none rounded-md
-    text-xl sm:text-2xl;
+.link:after {
+    @apply content-[''] absolute bottom-0 -right-full w-full h-0.5 bg-black;
+    background: var(--batton-text);
+    transition: all ease-in-out 1s;
 }
 
-.inputValid {
-    @apply text-xl
-    placeholder:text-red-600;
+.link:hover:before {
+    @apply left-0;
+}
+
+.link:hover:after {
+    @apply right-0;
+}
+
+.decoration:before {
+    @apply content-[''] absolute -top-full right-0 h-full w-0.5 bg-black;
+    background: var(--batton-text);
+    transition: all ease-in-out 1s;
+}
+.link:hover .decoration:before {
+    @apply top-0;
+}
+
+.decoration:after {
+    @apply content-[''] absolute -bottom-full left-0 h-full w-0.5 bg-black;
+    background: var(--batton-text);
+    transition: all ease-in-out 1s;
+}
+
+.link:hover .decoration:after {
+    @apply bottom-0;
+}
+
+.icon {
+    @apply ml-2 opacity-0;
+    transition: opacity ease-in-out 1s;
+}
+
+.link:hover .icon {
+    @apply opacity-100;
+    transition: all ease-in-out 1s;
 }
